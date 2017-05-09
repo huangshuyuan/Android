@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 编辑 API 之 Range 对象（二）</title>
+</head>
+<body>
+<h1>
+    Range 对象方法
+</h1>
+本课时讲解通过使用 Range 对象的方法来进行复制、追加、克隆等操作。通过简单地标签，来了解 Range 对象提供的方法的使用。
+<p id="p">随便写</p>
+<div id="div">hlelo
+    <button onclick="cloneRange()">克隆</button>
+</div>
+<script>
+    function cloneRange() {
+        var div = document.getElementById("div");
+        var rangeobj = document.createRange();
+
+        rangeobj.selectNodeContents(div);
+        var rangerColne = rangeobj.cloneContents();
+        // rangerColne.cloneRange();//文字内容：
+        div.appendChild(rangerColne);
+
+    }
+</script>
+
+<div id="mydiv1" style="background-color: red;width: 100px;height: 50px;"
+> hello
+</div>
+<div id="mydiv2" style="background-color: palevioletred;width: 100px;height: 50px;"
+>
+    <br>
+</div>
+<button onclick="moveContent()"> 移动元素</button>
+<script>
+    function moveContent() {
+        var sdiv = document.getElementById("mydiv1");
+        var disDiv = document.getElementById("mydiv2");
+        var rangeObj = document.createRange();
+        rangeObj.selectNodeContents(sdiv);
+        var d = rangeObj.extractContents();
+        disDiv.appendChild(d);
+    }
+</script>
+<br>
+<div onmouseup="moveBu()" style="width: 400px;background-color: blueviolet;height: 50px;">hhhhhhhhhhhhhhhhhhhh</div>
+<br>
+<button id="button">按钮</button>
+<script>
+    function moveBu() {
+        var btn = document.getElementById("button");
+        var selection = document.getSelection();
+        if (selection.rangeCount > 0) {
+            var range = selection.getRangeAt(0);
+            range.insertNode(btn);
+        }
+    }
+</script>
+<br>
+Range 对象方法之 insertNode、compareBoundaryPoints 方法
+上的感觉是个 无附件为<b id="blodw">知道</b>知道所覆盖假睫毛金佛危机诶诶
+<br>
+<button onclick="comp()"> 位置比较</button>
+<script>
+    function comp() {
+        var blod = document.getElementById("blodw");
+        var blrange = document.createRange();
+        blrange.selectNodeContents(blod.firstChild);
+        var seletion = document.getSelection();
+        if (seletion.rangeCount > 0) {
+            var ser = seletion.getRangeAt(0);
+            if (ser.compareBoundaryPoints(Range.START_TO_END, blrange) <= 0) {
+                alert("在粗体前面");
+
+            } else if (ser.compareBoundaryPoints(Range.END_TO_START, blrange) >= 0) {
+
+                alert("在粗体后面");
+            }
+
+
+        }
+    }
+</script>
+<br>
+Range 对象方法之 collapse、detach 方法<br>
+<div id="div1" style="width: 100px;background-color: palegoldenrod;height: 100px;"> he</div>
+<br>
+<button onclick="selectRange()">选择元素</button>
+<button onclick="unSelect()">取消元素</button>
+<button onclick="show()">显示range内容</button>
+<script>
+    var rangeObj=document.createRange();
+    function selectRange() {
+        var div=document.getElementById("div1");
+        rangeObj.selectNode(div);
+    }
+    function unSelect() {
+        rangeObj.collapse(false);
+    }
+    function show() {
+        alert(rangeObj.toString());
+    }
+</script>
+</body>
+</html>

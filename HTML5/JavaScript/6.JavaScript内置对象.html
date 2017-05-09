@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript内置对象</title>
+</head>
+<body onload="startTime()">
+<!--对象-->
+<script>
+
+    //    /*方式一建立对象*/
+    //    people = new Object();
+    //    people.name = "hsy";
+    //    people.age = 16;
+    //    people.sex = "男";
+    //
+    //    /*方式二建立对象*/
+    //    people2 = {name: "jjjj", age: 10};
+    //    document.write("name:" + people.name + ",age:"
+    //        + people.age + "," + people.sex + "<br>" + people2.name);
+    function createpeople(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    son = new createpeople("hhhh", 33);
+    document.write(son.name + son.age);
+
+</script>
+<br>
+<script>
+    var str = "hello world!";
+    var a = str.indexOf("o");
+    str.match("world");//字符串匹配
+
+    document.write(
+        str.toUpperCase() + "," + str.toLowerCase())
+    ;//查找字符串所在位置
+</script>
+
+
+<script>
+    var date = new Date();
+
+
+    //    document.write(date + "," + date.getFullYear() + "," + date.getMonth() + "," + date.getHours() + "," + date.getMinutes() + "," + date.getSeconds())
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("date").innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+            startTime();
+        }, 500);
+
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+
+        }
+        return i;
+    }
+    //单行注释
+    /**
+     * 多行注释
+     */
+
+    /*数组对象*/
+    var a = ["hello", "hh"];
+    var b = ["jjj"];
+    var c = a.concat(b);//数组合并
+
+    var d = [1, 3, 5, 0, 8];
+    document.write(d.sort(function (a, b) {
+        return b - a;
+    }))
+
+
+    /*Math*/
+
+    document.write("<br>"+Math.round(8.3) + "," + parseInt(Math.random() * 10) + ",max=" + Math.max(3, 4, 5, 100)+",abs="+Math.abs(-2));
+</script>
+<div id="date"> hello</div>
+</body>
+</html>

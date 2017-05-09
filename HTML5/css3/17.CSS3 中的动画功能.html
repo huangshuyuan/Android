@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 中的动画功能 </title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            margin-top: 20px;
+        }
+
+        .div1 {
+            text-align: center;
+            width: 200px;
+            /*多个电话*/
+            transition: background-color 1s linear, color 1s linear, width 1s linear, transform 1s linear;
+        }
+
+        /*tansition:progerty dration timing-function--*/
+        .div1:hover {
+
+            /*transition: background-color 1s linear;*/
+            /*于上方一样*/
+            /*   transition-property: background-color;
+               transition-duration: 1s;
+               transition-timing-function: linear;*/
+
+            background-color: red;
+            color: white;
+            width: 300px;
+            transform: rotate(360deg);
+        }
+
+        /*animations 复杂动画--帧动画*/
+        .div2 {
+            background-color: red;
+        }
+
+        @-webkit-keyframes mycolor {
+            0% {
+                background-color: red;
+            }
+            40% {
+                background-color: gold;
+
+            }
+            70% {
+                background-color: green;
+            }
+            100% {
+                background-color: rebeccapurple;
+            }
+
+        }
+
+        .div2:hover {
+            -webkit-animation: mycolor 3s linear;
+        }
+
+        /*实现多个属性值同时变化*/
+        .div3 {
+            position: absolute;
+        }
+
+        @-webkit-keyframes mycolor2 {
+            0% {
+                background-color: green;
+                transform: rotate(0deg);
+            }
+            40% {
+                background-color: gold;
+                transform: rotate(30deg);
+            }
+            60% {
+                background-color: red;
+                transform: rotate(-30deg);
+            }
+            100% {
+                background-color: deeppink;
+                transform: rotate(0deg);
+            }
+        }
+/*linear匀速 ease-in又慢到快 ease-our 由快到慢  ease  ease-in-out 开始慢慢慢加快慢慢放慢 */
+        .div3:hover {
+            -webkit-animation-name: mycolor2;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-timing-function: ease-in;
+        }
+    </style>
+</head>
+<body>
+
+
+Transitions 功能
+<br/>
+<div class="div1">
+    hello
+
+</div>
+
+Animations功能
+<br/>
+<div class="div2"></div>
+实现动画的方法
+<br/>
+<div class="div3"></div>
+</body>
+</html>

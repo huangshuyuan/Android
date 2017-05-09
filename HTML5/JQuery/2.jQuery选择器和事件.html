@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器和事件</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<p>p1</p>
+<p class="p2">p2</p>
+<button id="button"> 点击</button>
+jQuery选择器和事件-事件之事件常用方法
+<script>
+    $(document).ready(function () {//判断文档是否加载完成
+        $("#button").click(function () {//单击事件
+            $("p").text("p修改");
+            $(".p2").css("backgroundColor", "yellow");
+        });
+        $("button").dblclick(function () {//双击事件
+            $(".p2").css("backgroundColor", "red");
+        });
+        $("button").mouseenter(function () {//鼠标移入事件
+            $("p").text("p修改mouseenter");
+        });
+        $("button").mouseleave(function () {
+            $("p").text("鼠标离开");
+        });
+
+    });
+</script>
+<br>
+jQuery选择器和事件-事件之绑定、解除绑定事件
+<div class="dd">hello</div>
+<button id="click1"> 点击</button>
+<script>
+
+    $(document).ready(function () {
+//        $("#click1").bind("click", clickButt);//绑定点击事件
+//        $("#click1").unbind("click"
+//        clickButt
+//        )
+//        ;
+//        ;//解绑
+        $("#click1").on("click", clickButt);//绑定点击事件
+//        $("#click1").unbind("click"clickButt);//解绑
+
+    });
+    function clickButt() {
+        alert("hello");
+    }
+
+</script>
+
+jQuery选择器和事件-事件之事件目标与冒泡
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery - AJAX load() 方法</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <!--
+    1接口地址：m.channelwhale.com/APIRest/getMsgs
+2请求方式：POST
+3请求参数：
+参数名称	类型	是否必须	描述
+user_id	用户id，同原来的jxs_id	是
+access_token	接口请求标识字段	是
+api_key	接口请求端类型标识，iOS值为ios，安卓为android	是
+keyword	搜索关键字	否
+cur_page	当前页数	是
+pagesize	每页消息数	是	-->
+</head>
+
+<body>
+
+<script type="text/javascript">
+//    $(function () {
+//        $.ajax(
+//            {
+//                type: 'get',
+//                url: 'http://localhost:8080/Test/test.jsp',
+//                dataType: 'jsonp',
+//
+//                success: function (data) {
+//                    alert(data);
+//                },
+//                error: function () {
+//                    alert('fail');
+//                }
+//            }
+//        );
+//    })
+    $(document).ready(function () {
+        $("button").click(function () {
+
+            $.post(":8080/Test/test.jsp", {
+//                    api_key: "web",
+//                    user_id: "2489",
+//                    cur_page: 1,
+//                    pagesize: 10
+                },
+                function (data, status) {
+                    alert("数据: \n" + data + "\n状态: " + status);
+                });
+        });
+    });
+</script>
+
+
+<button>发送一个 HTTP GET 请求并获取返回结果</button>
+
+</body>
+</html>

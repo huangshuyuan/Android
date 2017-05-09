@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 增强的页面元素</title>
+</head>
+<body>
+
+figure、figcaption、details、summary 和 mark 元素
+<figure>
+    <!--只有一个元素，标题-->
+    <figcaption> 美女</figcaption>
+    <img src="/HTML5/images/meihua.jpg" alt="美女" width="100px" height="100px">
+    <img src="/HTML5/images/bgg.jpg" width="100px" height="100px">
+</figure>
+<!--details 统计元素 收缩元素-->
+<details open="true" id="de" onclick="detial_onclik(this)"><!--显示-->
+    <summary>速度</summary>
+    <p id="p" style="visibility: hidden"> 你好吗</p>
+</details>
+<script>
+    function detial_onclik(detail) {
+        var p = document.getElementById("p");
+        if (detail.open) {
+            p.style.visibility = "hidden";
+        } else {
+            p.style.visibility = "visible";
+        }
+    }
+</script>
+
+<!--Mark
+-->
+<p>hhhhhhhhhhhhhhh
+    <mark>hello</mark>
+    hhhhh
+</p>
+<h1>progress 和 meter 元素</h1>
+进度
+<script>
+    function brn() {
+//        for (var i=0;i<=100;i++){
+//           setTimeout(function () {
+//               update(i);
+//           },3000);
+//        }
+        var i = 0;
+
+        function thred_one() {
+            if (i <= 100) {
+                i++;
+                update(i);
+            }
+        }
+
+        setInterval(thred_one, 100);
+    }
+
+    function update(newValue) {
+        var progress = document.getElementById("pro");
+        progress.value = newValue;
+        progress.getElementsByTagName("span")[0].textContent = newValue;
+    }
+</script>
+<progress max="100" style="background-color: #0b6417" id="pro">
+    <span>0</span>%
+</progress>
+<input type="button" onclick="brn()" value="点击">
+
+<!--meter-->
+<meter value="40" min="0" max="100" low="10" high="90" optimum="80"></meter>
+<meter value="">F</meter>
+
+
+<br>
+<h1>ol、dl、cite 和 smal l元素</h1>
+
+<ol start="4" reversed><!--从4开始，倒叙-->
+    <li>列表</li>
+    <li>列表</li>
+    <li>列表</li>
+    <li>列表</li>
+    <li>列表</li>
+    <li>列表</li>
+</ol>
+
+<dl>
+    <dt>hello</dt>
+    <dd>你好</dd>
+    <dt>bok</dt>
+    <dd>hhhhhh</dd>
+</dl>
+
+cite
+<title>cite元素</title>
+<h3>cite</h3>
+<p>我昂收购价滚动<cite style="color: red">读的预计</cite></p>
+small了
+
+<p>
+    dsjflg<small style="color: red">和饿饿</small>时间到了施工进度
+</p>
+
+</body>
+</html>

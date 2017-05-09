@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 表单新增元素与属性</title>
+</head>
+<body>
+
+
+<form id="testForm">
+    <input type="text" formenctype="text/plain">
+    <input type="text" formenctype="multipart/form-data">
+    <input type="text" formenctype="application/x-www-form-urlencoded">
+</form>
+<br>
+<textarea form="testForm">  </textarea><!--可以写在外面-->
+<input type="submit" form="testForm" name="s1" formaction="http://localhost:8080/Test/NewFile.jsp">
+<input type="submit" form="testForm" name="s2" formmethod="get" formaction="http://localhost:8080/">
+<input type="submit" form="testForm" name="s3" value="s3" formmethod="post" formaction="http://localhost:8080/">
+formtarget 属性和 autofocus 属性
+<br>
+<form>
+    <input type="submit" name="s1" formtarget="_blank" formaction="http://localhost:8080/">
+    <input type="submit" name="s2" formtarget="_self" formmethod="get" formaction="http://localhost:8080/">
+    <input type="submit" name="s3" formtarget="_parent" value="s3" formmethod="post"
+           formaction="http://localhost:8080/">
+    <input type="submit" formtarget="_top" name="s1" formaction="http://localhost:8080/">
+</form>
+自动获取焦点
+<br>
+<form>
+    <input type="text" autofocus><!--自动获取焦点-->
+    <input type="text">
+</form>
+
+required必填项
+<form>
+    <input type="text" required><!--必填-->
+    <input type="submit" formaction="http://localhost:8080/">
+</form>
+
+labels
+
+<form id="formid">
+    <label id="label" for="txt_name"> 姓名：</label>
+    <input id="txt_name">
+    <input type="button" id="btn" value="验证" onclick="cli()">
+</form>
+<script>
+    /*验证*/
+    function cli() {
+        var name = document.getElementById("txt_name");
+        var button=document.getElementById("brn");
+        var form=document.getElementById("formid");
+        if (name.value.trim()== "") {
+         var label=document.createElement("label");
+         label.setAttribute("for","txt_name");
+         form.insertBefore(label,button);
+         name.labels[1].innerHTML="请输入姓名";
+         name.labels[1].setAttribute("style","font-size:9px;color:red;");
+        }
+    }
+</script>
+
+</body>
+</html>

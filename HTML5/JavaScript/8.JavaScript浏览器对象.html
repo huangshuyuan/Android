@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript浏览器对象</title>
+</head>
+<body>
+<div id="div"></div>
+<button id="button" onclick="closewindow()">关闭</button>
+<button onclick="openWindow()">打开</button>
+
+<p id="ptime"></p>
+<button onclick="stopTime()">停止时间</button>
+<button onclick="myWin()">延迟3秒</button>
+<button onclick="myWins()">不断执行</button>
+<button onclick="shopwins()">停止不断执行</button>
+<script>
+    var div = document.getElementById("div");
+    var height = window.innerHeight;
+    var width = window.innerWidth;
+    div.innerHTML = "宽度：" + width + "，高度：" + height;
+    /*关闭*/
+    function closewindow() {
+//        window.close();
+        close();//可以省略window
+    }
+    /*打开*/
+    function openWindow() {
+        window.open("5.JavaScript事件详解.html", "WindowName", "height=200,width=200,top=100,left=100,toolbar=no,")
+
+    }
+
+    /*计时器*/
+    var mytime = setInterval(function () {
+        getTime();
+    }, 1000);//不断执行，延迟时间
+    function getTime() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        var p = document.getElementById("ptime");
+        p.innerHTML = t;
+    }
+
+    function stopTime() {
+        clearInterval(mytime);
+    }
+    /*延迟执行*/
+    var win;
+    function myWin() {
+
+        win = setTimeout(function () {
+            alert("hello");//延迟3秒执行
+        }, 3000);
+
+    }
+    var wins;
+    function myWins() {
+        alert("hello");
+        wins = setTimeout(function () {
+            myWins();//不断执行
+        }, 3000);
+    }
+
+    function shopwins() {
+        clearTimeout(wins);
+    }
+</script>
+<!--history 对象-->
+<a href="8.next.html">跳转</a>
+
+<button onclick="gocechi()"> 下一页</button>
+<br>
+
+<a href="8.next.html">跳转2</a>
+<script>
+    function gocechi() {
+        history.forward();//前进
+    }
+</script>
+
+
+<!--Location对象-->
+<p id="p">
+
+</p>
+<script>
+
+    function getLocation() {
+        document.getElementById("p").innerHTML = location.hostname + "," + location.pathname + "," + location.port + "<br>" + location.href + "<br>";
+    }
+    getLocation();
+    /*重定向*/
+    //    location.assign("http://www.baidu.com");
+</script>
+
+<!--Screen对象-->
+<p id="p2">
+
+</p>
+<script>
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = screen.width + "," +
+        screen.height;
+</script>
+</body>
+</html>

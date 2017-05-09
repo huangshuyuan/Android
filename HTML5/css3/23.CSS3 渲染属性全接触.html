@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 渲染属性全接触 </title>
+    <style>
+        .test {
+            counter-increment: sec; /*计数器*/
+            margin: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff0e9;
+            padding: 20px;
+        }
+
+        .test:before {
+            background-color: #10af32;
+            color: white;
+            font-weight: bold;
+            content: " [新手任务] " counter(sec); /*计数从小到大*/
+            margin: 10px;
+
+        }
+
+        li {
+            list-style-type: none;
+            counter-increment: pic;
+        }
+
+        li:before {
+            content: "" counter(pic) ":";
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="test">
+    它其实是文本，它需要浏览器的解释，它的编辑器大体可以分为三种，<br/>
+    基本文本、文档编辑软件，使用微软自带的记事本或写字板都可以编写，当然，如果你用WPS来编写，也可以。不过存盘时请使用.htm或.html作为扩展名，这样就方便浏览器认出直接解释执行了。<br/>
+
+    <ul>
+        <li>
+            hello
+        </li>
+        <li>
+            hello
+        </li>
+        <li>
+            hello
+        </li>
+        <li>
+            hello
+        </li>
+        <li>
+            hello
+        </li>
+    </ul>
+</div>
+<div class="test">
+    半所见即所得软件，<br/>
+    如：FCK-Editer、E-webediter等在线网页编辑器；<br/>
+    尤其推荐：Sublime Text代码编辑器（由Jon Skinner开发，Sublime Text 2收费但可以无限期试用）。<br/>
+</div>
+<div class="test">
+    所见即所得软件，使用最广泛的编辑器，完全可以一点不懂HTML的知识就可以做出网页，如：<br/>
+    AMAYA（出品单位：万维网联盟）；<br/>
+    FRONTPAGE（出品单位：微软）；<br/>
+    Dreamweaver（出品单位：Adobe）。<br/></div>
+<div class="test">
+    所见即所得软件与半所见即所得的软件相比，开发速度更快，效率更高，且直观的表现更强。<br/>任何地方进行修改只需要刷新即可显示。缺点是生成的代码结构复杂，不利于大型网站的多人协作和精准定位等高级功能的实现。
+</div>
+</body>
+</html>

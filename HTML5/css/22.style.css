@@ -1,0 +1,21 @@
+div {
+  color: #ffa88f;
+  background: #ffa88f;
+  width: 200px;
+  height: 200px;
+}
+.test {
+  background: #a2f6ff;
+  width: 200px;
+  height: 200px;
+}
+#header {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#footer {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}

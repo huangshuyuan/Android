@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    font-family: Helvetica, sans-serif;
+    color: #ffebeb;
+    font-size: 20px;
+}
+
+div {
+    width: auto;
+    height: 900px;
+    background: #af9eff;
+    color: white;
+}
+
+.message, .success, .error, .warning {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+    border-color: green;
+}
+
+.error {
+    border-color: red;
+}
+
+.warning {
+    border-color: yellow;
+}
+
+/*# sourceMappingURL=24.style.css.map */

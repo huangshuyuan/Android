@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        CSS3 选择器 hover、focus、active 和 checked</title>
+    <style>
+        input[type="text"]:hover { /*鼠标在上面时*/
+            background-color: #4c2dff;
+        }
+
+        input[type="text"]:focus { /*获取焦点时候*/
+            background-color: #ff56fb;
+        }
+
+        input[type="text"]:active { /*有动作时，点击等等*/
+            background-color: #ffb842;
+        }
+
+        input[type="checkbox"]:checked { /*选中,变化*/
+            outline: 2px solid #ff2e34;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="name">
+
+<input type="text" name="age">
+<input type="checkbox">苹果
+<input type="checkbox">香蕉
+<input type="checkbox">梨子
+<input type="checkbox">草莓
+</body>
+</html>

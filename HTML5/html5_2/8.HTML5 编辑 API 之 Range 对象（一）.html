@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 编辑 API 之 Range 对象（一）</title>
+</head>
+<body>
+HTML5 编辑 API 之 Range 对象
+<script>
+    function rangeTest() {
+        var html;
+        var showRangeDiv = document.getElementById("showdiv");
+        var selection = document.getSelection();
+        if (selection.rangeCount > 0) {
+            html = "您选取了" + selection.rangeCount + "内容<br>";
+            for (var i = 0; i < selection.rangeCount; i++) {
+                var range = selection.getRangeAt(i);
+                html += "第" + (i + 1) + "段内容为：" + range + "<br>";
+            }
+            showRangeDiv.innerHTML = html;
+        }
+    }
+</script>
+<input type="button" value="点击" onclick="rangeTest()">
+<div id="showdiv">
+
+
+    Range方法之SelectNode等方法
+    <div id="div" style="background-color: #e0a0b0;width: 300px ;height: 200px">
+        元素中的内容
+    </div>
+    <button onclick="deleteRangeContent(true)">删除内容</button>
+    <button onclick="deleteRangeContent(false)">删除元素</button>
+    <script>
+        function deleteRangeContent(onlyContent) {
+            var div = document.getElementById("div");
+            var rangeObj = document.createRange();
+            if (onlyContent) {
+//删除内容
+                rangeObj.selectNodeContents(div);
+                rangeObj.deleteContents();
+            } else {
+                rangeObj.selectNode(div);
+                rangeObj.deleteContents();
+            }
+        }
+    </script>
+</div>
+
+
+Range方法之setStartsetEnd等方法
+<div id="mydiv" style="color: red">这段文字删除
+</div>
+<button onclick="delchar()">
+    删除文字
+</button>
+<script>
+    function delchar() {
+        var div = document.getElementById("mydiv");
+        var textnode = div.firstChild;
+        var rangeobj = document.createRange();
+        rangeobj.setStart(textnode, 1);
+        rangeobj.setEnd(textnode, 4);
+        rangeobj.deleteContents();
+
+    }
+</script>
+
+测试
+<table border="1" id="myTa" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>内容1</td>
+        <td>内容2</td>
+    </tr>
+    <tr>
+        <td>内容3</td>
+        <td>内容4</td>
+    </tr>
+</table>
+<button onclick="row()">删除第一行</button>
+<script>
+    function row() {
+        var table = document.getElementById("myTa");
+        if (table.rows.length > 0) {
+            var row = table.rows[0];
+            var rangobj = document.createRange();
+            rangobj.setStartBefore(row);
+            rangobj.setEndAfter(row);
+            rangobj.deleteContents();
+        }
+    }
+</script>
+</body>
+</html>

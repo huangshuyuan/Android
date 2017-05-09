@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Web Storage</title>
+    <!--引入js文件-->
+    <script src="15.appweb.js"></script>
+</head>
+<body><a href="/HTML5/index.html"> 返回</a>
+<form>
+
+    <input type="text" id="text1">
+    <br/>
+    <p id="msg"></p>
+    <br/>
+    <br/>
+    <input type="button" value="保存数据" onclick="saveStorage('text1')">
+    <br/>
+    <br/>
+    <input type="button" value="读取数据" onclick="loadStorage('msg')">
+    <br/>
+</form>
+<br/>
+<br/>
+<form>
+
+    <input type="text" id="text2">
+    <br/>
+    <p id="msg2"></p>
+    <br/>
+    <br/>
+    <input type="button" value="永久保存数据" onclick="saveLocalStorage('text2')">
+    <br/>
+    <br/>
+    <input type="button" value="读取数据" onclick="loadLocalStorage('msg2')">
+    <br/>
+</form>
+</body>
+</html>

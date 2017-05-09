@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript事件详解</title>
+</head>
+<body>
+<div id="div">
+    <button id="btn1">按钮</button>
+</div>
+<script>
+    //    /*事件处理*/
+    //    function demo() {
+    //        alert("hello");
+    //    }
+
+    /*只能有一个事件，事件会覆盖*/
+    var btn = document.getElementById("btn1");
+    btn.onclick = function () {
+        alert("hello 0级事件处理");
+    }
+</script>
+
+<button id="btn2">按钮</button>
+<br>
+<script>
+    var btn = document.getElementById("btn2");
+    /*可以添加多个事件处理*/
+    btn.addEventListener("click", function () {
+        alert("2级事件处理")
+    });
+    btn.addEventListener("click", function () {
+        alert("2级事件处理2")
+    });
+    btn.addEventListener("click", demo2);
+    function demo2() {
+        alert("2级事件处理3")
+    }
+    btn.removeEventListener("click", demo2);
+</script>
+
+<button id="btn3">按钮</button>
+<br>
+<script>
+    var btn = document.getElementById("btn3");
+    if (btn.addEventListener) {
+        btn.addEventListener("click", demo3);
+    } else if (btn.attachEvent) {
+        btn.attachEvent("onclick", demo3)
+    }
+    else {
+        alert("hello")
+    }
+    function demo3() {
+        alert("0000");
+    }
+</script>
+
+
+<button id="btn4">button</button>
+<div id="div1">接</div>
+<a id="aid" href="http://www.baidu.com">百度</a>
+<script>
+    document.getElementById("btn4").addEventListener("click", btn4)
+    document.getElementById("div1").addEventListener("click", showdiv)
+    document.getElementById("aid").addEventListener("click", showa);
+    function btn4(event) {
+//        alert(event.type)
+        alert(event.target)
+//        event.stopPropagation();//阻止事件冒泡
+    }
+    function showdiv() {
+        alert("div")
+    }
+
+    function showa(event) {
+        event.preventDefault();
+        /*阻止默认事件--链接不跳转*/
+    }
+</script>
+</body>
+</html>

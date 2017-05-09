@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 基础-属性选择器  [id*=div]  [id^=div]  [id$=div]  {</title>
+    <style>
+        [id*=div] {
+            color: lightcoral; /*只要包含div效果*/
+            font-size: 30px;
+        }
+
+        [id^=div] {
+            color: #1aff11; /*首字母包含div的加载效果*/
+        }
+
+        [id$=div] {
+            color: #3340ff;/*结束字符是div的加载效果*/
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="mydiv1">hello</div>
+<div id="div2">hello</div>
+<div id="div3">hello</div>
+<div id="div4">hello</div>
+<div id="my">hello</div>
+<div id="mydiv">hello</div>
+</body>
+</html>

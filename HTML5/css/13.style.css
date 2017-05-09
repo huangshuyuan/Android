@@ -1,0 +1,49 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*p {*/
+/*color: red;*/
+/*font-size: 20px;*/
+/*}*/
+
+h1, h2 {
+    color: green;
+}
+
+.div {
+    color: #ff4973;
+}
+
+a.div {
+    color: #ff14d7;
+}
+
+.p1 {
+    color: #7086ff;
+}
+
+.p2 {
+    font-size: 30px;
+}
+
+.p1.p2 {
+    font-style: italic;
+}
+
+#div {
+    color: #1aff11;
+}
+
+p strong {
+    color: crimson;
+}
+
+p > strong > i {
+    color: #2c14dc;
+}
+
+li+li{
+    color: #ff14d7;
+}

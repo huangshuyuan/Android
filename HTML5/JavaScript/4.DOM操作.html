@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+
+<p id="p1">hello</p>
+
+<p>hello</p>
+<a id="aid" href="http://www.baidu.com">百度</a>
+<button onclick="demo()">按钮</button>
+
+<button onclick="demo2()">改变</button>
+<script>
+    function demo() {
+        var p = document.getElementById("p1");
+        p.innerHTML = "world";
+//        document.write("hello2");
+    }
+    function demo2() {
+        document.getElementById("aid").innerHTML = "极客学院";
+        document.getElementById("aid").href = "http://www.jikexueyuan.com";
+    }
+</script>
+
+<div id="div">hhh</div>
+<button onclick="changebg()"> 改变背景</button>
+<script>
+    function changebg() {
+        document.getElementById("div").style.background = "red";
+    }
+</script>
+
+<button id="btn">点击事件</button>
+
+<button id="btn1">点击事件1</button>
+<script>
+    document.getElementById("btn").addEventListener("click", function () {
+        alert("hello.....")
+    });
+
+    var x=document.getElementById("btn1");
+    x.addEventListener("click",hello);
+    x.addEventListener("click",world);
+    function hello() {
+        alert("hello.....1")
+    };
+    function world() {
+        alert("hello.....2")
+    };
+</script>
+
+
+</body>
+</html>

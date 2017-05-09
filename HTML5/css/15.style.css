@@ -1,0 +1,66 @@
+li {
+    display: inline;
+}
+
+#div1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px auto;
+
+}
+
+.a1:link, .a1:visited {
+    text-decoration: none; /*去除下划线*/
+    display: block;
+    background-color: #5fa6ff;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 100px; /*z正常效果*/
+}
+
+.a1:active, .a1:hover {
+    /*鼠标放上效果*/
+    background-color: #2c14dc;
+}
+
+#div2 {
+    width: 70%;
+    margin: 0px auto;
+    background-color: #af9eff;
+    color: white;
+
+}
+
+.a2:link, .a2:visited {
+    text-decoration: none; /*去除下划线*/
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 200px; /*z正常效果*/
+}
+
+.a2:active, .a2:hover {
+    /*鼠标放上效果*/
+    background-color: #dc3a44;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#ul2 {
+    height: auto;
+    background-color: #5fa6ff;
+}
+
+#ul2 > li {
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}

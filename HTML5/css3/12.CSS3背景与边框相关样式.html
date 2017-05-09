@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3背景与边框相关样式 </title>
+    <style>
+        div {
+            background-color: papayawhip;
+            border: dashed 15px rebeccapurple;
+            padding: 30px;
+            height: 100px;
+            margin: 20px;
+            font-weight: bold;
+            background-image: url("house.gif");
+            background-repeat: no-repeat;
+
+        }
+
+        #div1 {
+            background-origin: border-box; /*从边框开始绘制背景*/
+            background-clip: border-box; /*包含边框和内边距*/
+
+        }
+
+        #div2 {
+            background-origin: padding-box; /*从padding开始绘制背景*/
+            background-clip: padding-box; /*不包含边框和包含内边距*/
+
+        }
+
+        #div3 {
+            background-origin: content-box; /*从内容开始绘制背景*/
+            background-clip: content-box; /*不包含边框和内边距*/
+
+        }
+
+    </style>
+</head>
+<body>
+背景
+<div id="div1">hello</div>
+<div id="div2">hello</div>
+<div id="div3">hello</div>
+</body>
+</html>

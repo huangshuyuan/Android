@@ -1,0 +1,31 @@
+@color: #ffa88f;
+@bgcolor: #a2f6ff;
+@width: 200px;
+@height: 200px;
+
+div {
+  color: @color;
+  background: @color;
+  width: @width;
+  height: @height;
+}
+
+.test {
+  background: @bgcolor;
+  width: @width;
+  height: @height;
+}
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+#header {
+  .rounded-corners;
+}
+
+#footer {
+  .rounded-corners(10px);
+}

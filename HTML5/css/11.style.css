@@ -1,0 +1,31 @@
+#container {
+    background-color: aliceblue;
+    width: 200px;
+    height: 500px;
+}
+
+#fd {
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    float: left;
+
+}
+
+#sd {
+    width: 100px;
+    height: 100px;
+    background-color: #ff3c63;
+    float: left;
+}
+
+#td {
+    width: 100px;
+    height: 100px;
+    background-color: #1aff11;
+    float: left;
+}
+
+#cd {
+    clear: left;
+}

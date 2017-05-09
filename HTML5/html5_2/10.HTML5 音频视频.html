@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 音频视频</title>
+</head>
+<body>
+<audio src="薛之谦%20-%20暧昧.mp3" controls="controls">你的浏览器不支持音频</audio>
+<br>
+自定义
+<audio id="au" src="薛之谦%20-%20暧昧.mp3">你的浏览器不支持音频</audio>
+<button onclick="play()">播放/暂停</button>
+<script>
+    var a = document.getElementById("au");
+    function play() {
+        if (a.paused) {
+            a.play();
+        } else {
+            a.pause();
+        }
+    }
+</script>
+<br>
+HTML5音频视频-编解码工具
+
+ffmpeg
+<br>
+HTML5音频视频-视频播放
+<video  id="v" controls  width="300px" height="250px">
+        <!--<source smovie2.mp4.mp4" type="video/mp4">-->
+    <source src="movie.mp4" type="video/mp4">
+
+        您的浏览器不支持 video 属性。
+
+</video>
+<button onclick="cbig()">放大</button>
+<button onclick="csmall()">缩小</button>
+<script>
+    var v=document.getElementById("v");
+    function cbig() {
+        v.width=800;
+        v.height=800;
+    }
+    function csmall() {
+        v.width=200;
+        v.height=200;
+    }
+</script>
+<br>
+</body>
+</html>

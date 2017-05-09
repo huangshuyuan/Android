@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 表单新增元素与属性（续）</title>
+</head>
+<body>
+control属性：
+<script>
+
+    function setDefault() {
+        var label = document.getElementById("label");
+        var tex = document.getElementById("tet");
+        tex.value = "010000"
+    }
+</script>
+<form>
+
+    <label id="label"> 邮编：
+        <input id="tet" maxlength="6"></label>
+    <input type="button" value="设置默认值" onclick="setDefault()">
+</form>
+
+placeholder提示 默认提示
+<form>
+    <input type="text" placeholder="输入电话号码：">
+</form>
+
+文本框list 可下拉选择数据，也可以输入数据
+<form>
+    <input type="text" name="grer" list="greetings">
+    <datalist id="greetings" style="display: none">
+        <option value="HTML">HTML</option>
+        <option value="Java">Java</option>
+        <option value="Android">Android</option>
+
+    </datalist>
+</form>
+
+autocomplete属性
+<form>
+    <input type="text" name="gret" autocomplete="on" list="greetings2"><!--on off   ""-->
+    <datalist id="greetings2" style="display: none">
+        <option value="JS">JS</option>
+        <option value="Java">Java</option>
+        <option value="Android">Android</option>
+
+    </datalist>
+</form>
+
+pattern属性和SelectionDirection属性
+<form>
+    请输入内容：
+</form>
+<form action="http://localhost:8080/Test/NewFile.jsp">
+    <input pattern="[A-Z]{3}" name="part">
+    <input type="submit" value="提交">
+</form>
+SelectionDirection属性
+<script>
+    function dianji() {
+        var conrrol = document.getElementById("text1");
+        var derection = conrrol.selectionDirection;//选择文本方向
+        alert(derection);
+    }
+</script>
+<form>
+    <input type="text" id="text1">
+    <input type="button" value="点击我" onclick="dianji()">
+</form>
+
+indeterminate属性和image提交按钮的height属性与width属性
+<form>
+    <input type="checkbox" id="check" indeterminate>属性测试
+
+</form>
+<script>
+    var cb = document.getElementById("check");
+    cb.indeterminate = true;
+    /*不明状态*/
+</script>
+image提交按钮的height属性与width属性
+<form action="http://localhost:8080/Test/test.jsp" method="post">
+    姓名：<input type="text">
+    <input type="image" src="/HTML5/JavaScript/13img/1.jpg" height="100px" width="100px">
+
+</form>
+</body>
+</html>

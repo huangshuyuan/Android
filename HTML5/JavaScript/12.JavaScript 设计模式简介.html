@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 设计模式之单例模式</title>
+</head>
+<body>
+<script>
+
+    /*模块间通信
+     * 系统对象只有一个
+     * 保护属性和方法*/
+
+    var xiaowang = (function (argument) {
+        var xiaowangjia = function (message) {
+            this.mengling = message;
+        }
+        var men;
+        var info = {
+            sendMessage: function (message) {
+                if (!men) {
+                    men = new xiaowangjia(message);
+                }
+                ;
+                return men;
+            }
+        }
+        return info;
+    }());
+    var xiaoli = {
+        callxiaowang: function (msg) {
+            var _xw = xiaowang.sendMessage(msg);
+            alert(_xw.mengling);
+            _xw = null;//回收
+        }
+    };
+
+    xiaoli.callxiaowang("didi");
+</script>
+
+<script>
+    //
+</script>
+</body>
+</html>

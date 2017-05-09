@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Canvas 标签的使用</title>
+</head>
+<body>
+HTML5 Canvas
+标签定义图形，比如图表和其他图像，您必须使用脚本来绘制图形。
+在画布上（Canvas）画一个红色矩形，渐变矩形，彩色矩形，和一些彩色的文字。
+<br>
+<canvas style="width: 200px;height: 200px;background-color: palegoldenrod;">
+
+</canvas>
+<script>
+    var width = 300;
+    var height = 300;
+    window.onload = function () {
+        createC();
+        function createC() {
+            document.body.innerHTML = "<canvas id=\"my\" style='background-color: #0b6417' width=\"" + width + "\"height=\"" + height + "\"></canvas>";
+        }
+
+    }
+</script>
+
+</body>
+</html>

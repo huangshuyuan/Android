@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3盒子相关样式</title>
+    <style>
+        .dd {
+            background-color: gray;
+            display: inline-block; /*一行显示*/
+            width: 300px;
+        }
+
+        span {
+            background-color: cadetblue;
+            display: inline-block; /*块显示*/
+            width: 300px;
+        }
+
+        table {
+            display: inline-table; /*表格上下的文字改为左右布局*/
+            border: 3px solid rebeccapurple;
+        }
+
+        td {
+            border: 2px solid red;
+            padding: 4px;
+        }
+
+        .dive {
+            display: list-item; /*div---列表*/
+            list-style-type: circle;
+            margin-left: 30px;
+        }
+
+        #div3 {
+            width: 300px;
+            overflow: scroll;
+            height: 150px;
+            border: 2px solid red;
+        }
+
+        #div4 {
+            margin-top: 30px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap; /*不换行*/
+            width: 300px;
+            height: 150px;
+            border: 2px solid red;
+        }
+
+        #div5 {
+            background-color: papayawhip;
+            box-shadow: 0px 0px 25px red;
+            width: 300px;
+            height: 200px;
+            margin-bottom: 40px;
+        }
+
+        div {
+            margin: 30px;
+        }
+
+        #div6 {
+            box-sizing: border-box; /*padding值包括在盒子中*/
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            background-color: rosybrown;
+        }
+
+        #div7 {
+            box-sizing: content-box; /*padding值不包括在盒子中*/
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            background-color: #0b6417;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div6">6</div>
+<div id="div7">7</div>
+<div id="div5">
+
+</div>
+<div class="dd">div</div>
+<div class="dd">div</div>
+<span>span</span>
+<span>span</span>
+<br/>
+你好
+<table>
+    <tr>
+        <td>hello</td>
+    </tr>
+    <tr>
+        <td>hello</td>
+    </tr>
+    <tr>
+        <td>hello</td>
+    </tr>
+
+</table>
+你好
+
+<br/>
+<div class="dive">实例1</div>
+<div class="dive">实例2</div>
+<div class="dive">实例3</div>
+<div class="dive">实例1</div>
+<div class="dive">实例1</div>
+<div class="dive">实例1</div>
+<h1>标题文字</h1>
+<div id="div3">
+    文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或 文字hello，v
+    你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+
+</div>
+<div id="div4">
+    文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或 文字hello，v
+    你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或 文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+    文字hello，你好呀，我很好，哈哈哈哈或
+
+</div>
+</body>
+</html>

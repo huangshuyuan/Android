@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 实现 loading 动画</title>
+    <style type="text/css">
+        .box {
+            width: 100%;
+            padding: 3%;
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        .loder {
+            width: 30%;
+            height: 200px;
+            float: left;
+            box-sizing: border-box;
+            display: flex;
+            margin-right: 3%;
+            border: 1px #889399 solid;
+            -webkit-justify-content: center;
+            align-items: center;
+        }
+
+        .loding1 {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+        }
+
+        .loding1 i {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: -webkit-linear-gradient(transparent 0%, transparent 70%, #333 30%, #333 100%);
+            animation: lode1 0.6s linear 0s infinite;
+        }
+
+        @keyframes lode1 {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loding2 i {
+            display: inline-block;
+            width: 4px;
+            height: 35px;
+            border-radius: 2px;
+            margin: 0 2px;
+            background: #333;
+        }
+
+        .loding2 i:nth-child(1) {
+            animation: lode2 1s ease-in 0.1s infinite;
+        }
+
+        .loding2 i:nth-child(2) {
+            animation: lode2 1s ease-in 0.2s infinite;
+        }
+
+        .loding2 i:nth-child(3) {
+            animation: lode2 1s ease-in 0.3s infinite;
+        }
+
+        .loding2 i:nth-child(4) {
+            animation: lode2 1s ease-in 0.4s infinite;
+        }
+
+        .loding2 i:nth-child(5) {
+            animation: lode2 1s ease-in 0.5s infinite;
+        }
+
+        @keyframes lode2 {
+            0% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(0.4);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+
+        }
+
+        .loding3 {
+            position: relative;
+        }
+
+        .loding3 i {
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            position: absolute;
+            background: #333;
+        }
+
+        .loding3 i:nth-child(1) {
+            top: 25px;
+            left: 0;
+            animation: lode3 1s ease-in 0s infinite;
+        }
+
+        .loding3 i:nth-child(2) {
+            top: 17px;
+            left: 17px;
+            animation: lode3 1s ease-in -0.12s infinite;
+        }
+
+        .loding3 i:nth-child(3) {
+            top: 0px;
+            left: 25px;
+            animation: lode3 1s ease-in -0.24s infinite;
+        }
+
+        .loding3 i:nth-child(4) {
+            top: -17px;
+            left: 17px;
+            animation: lode3 1s ease-in -0.36s infinite;
+        }
+
+        .loding3 i:nth-child(5) {
+            top: -25px;
+            left: 0;
+            animation: lode3 1s ease-in -0.48s infinite;
+        }
+
+        .loding3 i:nth-child(6) {
+            top: -17px;
+            left: -17px;
+            animation: lode3 1s ease-in -0.6s infinite;
+        }
+
+        .loding3 i:nth-child(7) {
+            top: 0px;
+            left: -25px;
+            animation: lode3 1s ease-in -0.72s infinite;
+        }
+
+        .loding3 i:nth-child(8) {
+            top: 17px;
+            left: -17px;
+            animation: lode3 1s ease-in -0.84s infinite;
+        }
+
+        @keyframes lode3 {
+            50% {
+                transform: scale(0.4);
+                opacity: 0.3; /*透明度*/
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1; /*透明度*/
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="loder">
+        <div class="loding1">
+            <i></i>
+        </div>
+    </div>
+    <div class="loder">
+        <div class="loding2">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+    </div>
+    <div class="loder">
+        <div class="loding3">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

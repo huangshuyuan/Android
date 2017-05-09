@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript高级函数</title>
+</head>
+<body>
+<script>
+    function createXHR() {
+        var xhr = null;
+        try {
+            xhr = new XMLHttpRequest();
+        } catch (e) {
+            try {
+                xhr = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    xhr = null;
+                }
+            }
+        }
+        return xhr;
+
+    }
+
+    function handleErr(e) {
+
+    }
+</script>
+
+<script>
+    function add(num1, num2, num3) {
+        return num1 + num2 + num3;
+    }
+    function totalAdd(num4) {
+        return 50 + add(1, 2);
+    }
+    alert(totalAdd(40));
+
+    function curry(fn) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return function () {
+            var innerArgs = Array.prototype.slice.call(arguments);
+            var finalArgs = args.concat(innerArgs);
+            return fn.apply(this, finalArgs);
+        }
+    }
+    var t = curry(add, 50)(1, 2);
+    alert(t);
+</script>
+
+<script>
+    function classA() {
+        this.lian = "";
+        this.zui = "";
+    }
+
+    classA.prototype = {
+        setLian: function () {
+            this.lian = "红扑扑"
+        }, setZui: function () {
+
+            this.zui = "大嘴"
+        }
+    }
+    var person = new classA();
+    person.setLian();
+    person.setZui();
+
+    alert(person.zui+person.lian)
+</script>
+</body>
+</html>

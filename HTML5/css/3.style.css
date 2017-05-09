@@ -1,0 +1,76 @@
+/*body {*/
+/*background-color: #af9eff;*/
+/*}*/
+
+/*p {*/
+/*background-color: #ff4f6a;*/
+/*width: 150px;*/
+/*padding: 10px;*/
+/*}*/
+
+body {
+    background-repeat: no-repeat; /*不重复*/
+    /*background-position: center top; !*位置*!*/
+    background-attachment: fixed;
+    background-size: 100% 100%; /*尺寸*/
+    /* background-attachment: scroll; 滚动*/
+
+    /*   background-attachment: fixed;不随着滚动*/
+
+    /* background-position: 20px 20px;  值  百分数/*位置*/
+    background-image: url("/HTML5/images/bgg.jpg");
+    color: white;
+}
+
+#p1 {
+    text-align: left; /*文本对齐方式*/
+}
+
+#p2 {
+    text-align: right; /*文本对齐方式*/
+}
+
+#p3 {
+    text-align: center; /*文本对齐方式*/
+}
+
+#p4 {
+    text-align: match-parent; /*文本对齐方式*/
+}
+
+#p5 {
+    text-align: start; /*文本对齐方式*/
+}
+
+#p6 {
+    text-align: end; /*文本对齐方式*/
+}
+
+h3 {
+    text-indent: 1em; /*首行缩进*/
+}
+
+div {
+    padding-left: 2em;
+}
+
+#pp1 {
+    text-transform: capitalize /*英文规范*/
+}
+
+#pp2 {
+    text-transform: lowercase /*英文规范*/
+}
+
+#pp3 {
+    text-transform: uppercase /*英文规范*/
+}
+
+#shadow {
+    text-shadow: 5px 5px 5px rgba(31, 54, 255, 0.95); /*第一个居左，居上，清晰度，背景色*/
+}
+
+#hu {
+    width: 50px;
+    text-wrap: normal; /*自动换行*/
+}

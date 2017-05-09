@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        CSS3 选择器 root、not、empty 和 target</title>
+    <style>
+        /*根元素*/
+        :root {
+            background-color: pink;
+        }
+
+        /*当有root时body只对内容部分生效*/
+        body {
+            background-color: #cccccc;
+        }
+
+        /*排除元素*/
+
+        div *:not(a) {
+            color: #dc3a44;
+        }
+
+        /*设置没有内容的样式*/
+        :empty {
+            background-color: rebeccapurple;
+        }
+
+        /*页内跳转改变背景色,点击链接超链接*/
+        :target {
+            background-color: #3340ff;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1> 你好吗?</h1>
+    <h2>我很好</h2>
+    <p>你怎么样</p>
+    <a href="#a1">菜单1</a>
+    <a href="#a2">菜单2</a>
+    <a href="#a3">菜单3</a>
+    <a href="#a4">菜单4</a>
+    <p></p>
+    <table border="1px">
+        <tr>
+            <td>hello</td>
+            <td>hello</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>hello</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>hello</td>
+        </tr>
+    </table>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p id="a3">你怎么样a3</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p id="a4">你怎么样a4</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p id="a2">你怎么样a2</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p id="a1">你怎么样a1</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+    <p>你怎么样</p>
+</div>
+
+</body>
+</html>

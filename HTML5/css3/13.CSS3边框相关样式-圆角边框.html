@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3背景与边框相关样式2</title>
+    <style>
+        #div1 { /*多张背景绘制*/
+            background-image: url("house.gif"), url("shu.jpg");
+            background-repeat: repeat-x, no-repeat;
+            background-position: 100%, 100%, center, center;
+            height: 400px;
+        }
+
+        #div2 {
+            margin-top: 40px;
+            background-color: paleturquoise;
+            width: 300px;
+            height: 200px;
+
+            padding: 20px;
+            border: 3px solid rebeccapurple;
+            border-radius: 80px 5px 80px 5px;
+            /*左上 右上 右下 左下-----圆角*/
+        }
+    </style>
+</head>
+<body>
+多张背景绘制
+<div id="div1">
+    hello
+</div>
+圆角边框
+<div id="div2">
+    hello实例文字实例文字实例文字实例文字
+    hello实例文字实例文字实例文字实例文字
+    hello实例文字实例文字实例文字实例文字
+    hello实例文字实例文字实例文字实例文字
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式图片项目实战</title>
+    <script src="picturefill.min.js" type="text/javascript" rel="script"></script>
+</head>
+<body>
+
+<h1>响应式图片项目实战-sizes- srcset</h1>
+<img sizes="(min-width:900px) 900px,100vw"
+     srcset="
+        mipmap-hdpi/test.png 480w,
+        mipmap-xhdpi/test.png 640w,
+        mipmap-xxhdpi/test.png 720w,
+        mipmap-xxxhdpi/test.png 1080w"
+     src="mipmap-hdpi/test.png" alt="hdpi">
+
+
+<h1>响应式图片项目实战-picture-source</h1>
+<picture>
+    <source media="(max-width:1080px) " srcset=" mipmap-hdpi/test.png ">
+    <source media="(max-width:720px) " srcset=" mipmap-xhdpi/test.png">
+    <source media="(max-width:640px) " srcset="mipmap-xxhdpi/test.png">
+    <source media="(max-width:480px) " srcset="mipmap-xxxhdpi/test.png">
+    <img src="mipmap-xxxhdpi/test.png">
+</picture>
+</body>
+</html>

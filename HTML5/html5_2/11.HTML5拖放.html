@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5拖放</title>
+</head>
+<style>
+    .box {
+        width: 400px;
+        height: 400px;
+        background-color: palegoldenrod;
+    }
+
+    img {
+        width: 100px;
+        height: 50px;
+    }
+
+    #div1 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+    #img2{
+        width: auto;
+        height: auto;
+    }
+</style>
+<script>
+    var boxdiv, msg, img1;
+    window.onload = function () {
+        boxdiv = document.getElementById("div");
+        msg = document.getElementById("msg");
+        img1 = document.getElementById("img1");
+//        boxdiv.ondragenter = function (e) {
+//            showObj(e);
+//        }
+        boxdiv.ondragover = function (e) {
+            e.preventDefault();
+        }
+        boxdiv.ondrop = dropImg;
+
+
+        img1.ondragstart = function (e) {
+            e.dataTransfer.setData("imgID", "img1");
+        }
+
+
+        function dropImg(e) {
+            showObj(e.dataTransfer);
+            e.preventDefault();
+            var img = e.dataTransfer.getData("imgID");
+            e.target.appendChild(document.getElementById(img));
+        }
+
+        function showObj(obj) {
+            var s = "";
+            for (var i in obj) {
+                s += i + ":" + obj[i] + "<br>";
+            }
+            msg.innerHTML = s;
+        }
+    }
+</script>
+<body>
+<div id="div" class="box">
+
+</div>
+<img id="img1" src="/HTML5/images/bgg.jpg">
+<div id="msg"></div>
+
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</head>
+
+
+<p>拖动 RUNOOB.COM 图片到矩形框中:</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="/HTML5/images/bgg.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69"></body>
+
+本地图片拖拽
+
+<div id="imgcon" style="width: 300px;background-color: blanchedalmond;height: 400px;"></div>
+<script>
+    var imv;
+    window.onload = function () {
+        imv = document.getElementById("imgcon");
+        imv.ondragover = function (e) {
+            e.preventDefault();
+        }
+        imv.ondrop = function (e) {
+            e.preventDefault();
+            var f = e.dataTransfer.files[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function (e) {
+                imv.innerHTML = "<img id='img2' src=\"" + fileReader.result + "\">";
+            }
+            fileReader.readAsDataURL(f);
+
+        }
+    }
+</script>
+
+
+</html>

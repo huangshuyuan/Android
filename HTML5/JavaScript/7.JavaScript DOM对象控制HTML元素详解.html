@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript DOM对象控制HTML元素详解</title>
+</head>
+<body>
+
+<p class="pn">hello</p>
+<p class="pn">hello</p>
+<p class="pn">hello</p>
+<p class="pn">Word</p>
+<p class="pn">hello</p>
+<p class="pn">hello</p>
+<a id="aid" title="hhhh">helo</a>
+<a id="aid2" title="hhhh">helo</a>
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<div name="jjjjjjjjjjjj">
+    hhhhh
+    <div id="div1">hello</div>
+</div>
+<div id="div2">hello3
+    <p id="pid">pppp< /p></div>
+<script>
+    function getName() {
+        var count = document.getElementsByClassName("pn");
+        alert(count.length);
+        count[3].innerHTML = "hhhhhhhhhhhhhhh";
+    }
+    getName();
+    /*获取属性的值*/
+    function getAttr() {
+        var a = document.getElementById("aid");
+        var attr = a.getAttribute("title");
+        alert(attr);
+    }
+    getAttr();
+    /*设置属性*/
+    function setAttr() {
+        var a = document.getElementById("aid2");
+        a.setAttribute("title", "设置属性");
+        var attr = a.getAttribute("title");
+        alert(attr);
+    }
+    setAttr();
+
+    /*子元素节点*/
+    function getchildnode() {
+        var child = document.getElementsByTagName("ul")[0].childNodes;
+        alert(child.length);
+        child[0].innerHTML = "你好呀";
+    }
+    getchildnode();
+    /*父元素节点*/
+    function getPerent() {
+        var node = document.getElementById("div1");
+        var aa = node.parentNode.nodeName;
+        alert(aa);
+    }
+    getPerent();
+    /*创建节点*/
+    function createNode() {
+        var body = document.body;
+        var input = document.createElement("input");
+        input.type = "button";
+        input.value = "按钮";
+        body.appendChild(input);
+    }
+    createNode();
+
+    /*插入节点*/
+    function addNode() {
+        var div = document.getElementById("div2");
+        var node = document.getElementById("pid");
+        var newnode = document.createElement("p");
+        newnode.innerHTML = "添加p";
+        div.insertBefore(newnode, node);
+
+
+    }
+    addNode();
+
+    function removeNode() {
+        var div = document.getElementById("div2");
+        var p = div.removeChild(div.childNodes[1]);
+    }
+    removeNode();
+
+    function getSize() {
+        var width = document.documentElement.offsetWidth;
+        var height = document.documentElement.offsetHeight;
+        /*浏览器兼容*/
+        var width2 = document.body.offsetWidth || document.documentElement.offsetWidth;
+        var height2 = document.body.offsetHeight || document.documentElement.offsetHeight;
+        alert(width + "高度：" + height + "," + width2 + "," + height2);
+    }
+    getSize();
+</script>
+
+<div>
+
+</div>
+</body>
+</html>

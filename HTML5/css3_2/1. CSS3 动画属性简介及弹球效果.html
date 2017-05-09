@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> CSS3 动画属性简介及弹球效果 </title>
+    <style type="text/css">
+
+        /*动画过渡效果属性 transition 讲解*/
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+            background-color: red;
+            /*鼠标移开效果*/
+            transition: all 1s; /*所有效果参与动画*/
+        }
+
+        /*鼠标滑过效果*/
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: gray;
+            border-radius: 50%;
+
+            /*复杂方式*/
+            /*  transition-property: width, height, border-radius;
+              transition-duration: 1s;
+              transition-timing-function: ease-in;!*动画的缓冲效果*!
+              transition-delay: 1s;*/
+
+            /*简写方式*/
+            transition: all 1s ease-in 1s;
+        }
+
+        /*属性动画*/
+        .box2 {
+            width: 100px;
+            height: 100px;
+            margin: 50px auto;
+            background-color: #1442ff;
+        }
+
+        .box2:hover {
+            -webkit-animation: anim 1s ease-in infinite;
+            /* -webkit-transition-name: anim1;
+             -webkit-transition-duration: 1s;
+             -webkit-transition-timing-function: ease-in;
+             -webkit-transition-iteration-count: infinite;*/
+        }
+
+        @-webkit-keyframes anim {
+            0% {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+            50% {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+
+        }
+
+        /*变形*/
+        .box3 {
+            width: 1000px;
+            height: auto;
+        }
+
+        .box3:after {
+            clear: both;
+            overflow: hidden;
+            display: block;
+            content: "";
+
+        }
+
+        .box3 p {
+            width: 200px;
+            border: 1px #166e35 solid;
+            margin-left: 30px;
+            text-align: center;
+            float: left;
+
+        }
+
+        .box3 > p strong {
+            display: block;
+            background-color: #889399;
+            line-height: 28px;
+        }
+
+        .box3 > p span {
+            margin: 30px auto;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: #dbb2a4;
+        }
+
+        .box3 > p .translate {
+            /*移动*/
+            transform: translate(30px, 20px);
+        }
+
+        .box3 > p .rotate {
+            /*旋转*/
+            transform: rotate(20deg);
+        }
+
+        .box3 > p .scale {
+            /*缩放*/
+            transform: scale(0.6);
+        }
+
+        .box3 > p .skew {
+            /*扭曲*/
+            transform: skew(20deg, 10deg);
+        }
+
+        /*变形*/
+        .box4 {
+            width: 1000px;
+            height: 300px;
+        }
+
+        .box4:after {
+            clear: both;
+            overflow: hidden;
+            display: block;
+            content: "";
+
+        }
+
+        .box4 p {
+            width: 200px;
+            border: 1px #6e6b4d solid;
+            margin-left: 30px;
+            text-align: center;
+            float: left;
+
+        }
+
+        .box4 > p strong {
+            display: block;
+            background-color: #949992;
+            line-height: 28px;
+        }
+
+        .box4 > p span {
+            margin: 30px auto;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: #3aa3db;
+            transform-origin: 0 -40px; /*对于3改变基准点*/
+        }
+
+        .box4 > p .translate {
+            /*移动*/
+            transform: translate(30px, 20px);
+        }
+
+        .box4 > p .rotate {
+            /*旋转*/
+            transform: rotate(20deg);
+        }
+
+        .box4 > p .scale {
+            /*缩放*/
+            transform: scale(0.6);
+        }
+
+        .box4 > p .skew {
+            /*扭曲*/
+            transform: skew(20deg, 10deg);
+        }
+
+        /*阴影*/
+        .shadow {
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .shadow > p {
+
+            width: 100px;
+            height: 100px;
+            border: 1px #b83f3f solid;
+            background-color: #f9f9f9;
+
+        }
+
+        .out {
+            box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .shadow > p:last-child {
+            box-shadow: inset 5px 5px 5px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /*渐变*/
+        .gradient {
+            clear: both;
+            width: 1000px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .gradient > p {
+            width: 100px;
+            height: 100px;
+            border: 1px #b83f3f solid;
+            background-color: #f9f9f9;
+
+        }
+
+        .line1 {
+            background: -webkit-linear-gradient(top, pink, white 20px, green);
+        }
+        .gradient >p:last-child{
+            background: -webkit-linear-gradient(20deg, pink, white , #549948);
+        }
+    </style>
+</head>
+<body>
+<p> 动画过渡效果属性 transition 讲解</p>
+<div class="box"></div>
+<p> 2 动画效果属性 animation 讲解</p>
+<div class="box2"></div>
+<p>3 CSS3 变形、阴影和渐变背景色属性讲解</p>
+<div class="box3">
+    <p>
+        <strong>移动</strong>
+        <span class="translate"></span>
+    </p>
+    <p>
+        <strong>旋转</strong>
+        <span class="rotate"></span>
+    </p>
+    <p>
+        <strong>缩放</strong>
+        <span class="scale"></span>
+    </p>
+    <p>
+        <strong>扭曲</strong>
+        <span class="skew"></span>
+    </p>
+</div>
+
+<div class="box4">
+    <p>
+        <strong>移动</strong>
+        <span class="translate"></span>
+    </p>
+    <p>
+        <strong>旋转</strong>
+        <span class="rotate"></span>
+    </p>
+    <p>
+        <strong>缩放</strong>
+        <span class="scale"></span>
+    </p>
+    <p>
+        <strong>扭曲</strong>
+        <span class="skew"></span>
+    </p>
+
+</div>
+
+<p>阴影</p>
+<div class="shadow">
+    <p class="out">外阴影</p>
+    <p class="in">内阴影</p>
+</div>
+<br/>
+<p>渐变</p>
+<div class="gradient">
+    <p class="line1">普通渐变</p>
+    <p>角度渐变</p>
+</div>
+</body>
+</html>

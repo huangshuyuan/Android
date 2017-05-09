@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 文字与字体相关样式</title>
+    <style>
+        #div1 {
+
+            /*text-shadow: 5px 5px 5px red;  */
+            text-shadow: -5px 5px 5px red,
+            25px 25px 6px red; /*多个阴影效果*/
+            color: black;
+            font-size: 40px;
+        }
+
+        @font-face {
+            font-family: WebFont;
+            src: url('Fzltcxhjw.ttf') format("truetype");/*自定义字体*/
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: myArial;
+            src: local("Arial"), url("Fzltcxhjw.ttf");/*客户端有使用有的，没有使用URL*/
+            font-weight: bold;
+        }
+
+        .div1 {
+            font-family: WebFont;
+            color: #ff2927;
+            font-size: 40px;
+
+        }
+
+        .div2 {
+            font-family: myArial;
+            font-size: 40px;
+        }
+
+        #div2 {
+            font-family: Arial;
+            font-size: 16px;
+            font-size-adjust: 0.6;
+        }
+
+        #div3 {
+            font-family: 楷体;
+            font-size: 16px; font-size-adjust: 0.4;
+        }
+
+        #div4 {
+            font-family: 宋体;
+            font-size: 16px; font-size-adjust: 0.57;
+        }
+
+    </style>
+</head>
+<body>
+文字阴影
+<br/>
+<!--text-shadow:length length length color 1.横向  2.纵向  3.透明度  4 颜色-->
+<div id="div1"> hello</div>
+<br/><br/><br/><br/>
+字体CSS3 使用服务器端字体
+<br/>
+<div class="div1">
+    This is my page
+    我是你，大家好啊
+
+</div>
+
+<div class="div2">
+    This is my page
+    我是你，大家好啊
+
+</div>
+
+<br/>
+CSS3 修改字体种类而保持字体尺寸不变
+
+<br/>
+<div id="div2">
+    hello 你好呀
+</div>
+<br/>
+<div id="div3">
+    hello 你好呀
+</div>
+<br/>
+<div id="div4">
+    hello 你好呀
+</div>
+
+</body>
+</html>

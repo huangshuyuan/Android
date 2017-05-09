@@ -1,0 +1,17 @@
+#divId p { /*div样式可以通过# ID ---》设置  p标签颜色*/
+    color: #404fff;
+
+}
+
+a {
+    color: #ff4f6a /*所有a 标签*/
+}
+
+#divId a { /*div a标签颜色*/
+    color: darkmagenta;
+
+}
+
+#divspan {
+    color: #ffbb37;
+}

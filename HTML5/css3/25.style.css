@@ -1,0 +1,22 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../images/timg.jpg),
+    url(../images/shan.jpg) no-repeat center center fixed;
+    background-size: cover, cover;
+    background-blend-mode: overlay, normal; /*多背景混合模式*/
+    animation: bgAnimation 20s linear infinite;
+}
+
+@keyframes bgAnimation {
+    from {
+        background-position: 0 0, center center;
+    }
+    to {
+        background-position: -1000px 0, center center;
+    }
+
+}

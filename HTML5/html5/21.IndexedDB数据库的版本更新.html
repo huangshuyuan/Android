@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据库的版本更新</title>
+    <script>
+
+        /*这是兼容性的代码:
+         * 最终的这个页面是要放到用户浏览器里去执行的。而用户的浏览器的类型，版本是你无法控制的。用户可能用IE，FireFox，Chrome，
+         * 而这三种浏览器获取到 indexedDB 对象所用的代码也不是相同的。所以我们就需要把每种都写出来，确保在运行的时候能够获取到这个对象*/
+        window.indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;
+        window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+        window.IDBKeyrange = window.IDBKeyrange || window.webkitIDBKeyrange || window.msIDBKeyrange;
+        window.IDBCursor = window.IDBCursor || window.webkitIDBCursor || window.msIDBCursor;
+
+
+        function connectDatabase() {/*链接数据库*/
+            var dbName = "indexedDBTest1";
+            var dbVersion = 1;
+            var idb;
+            var dbConnect = indexedDB.open(dbName, dbVersion);
+            dbConnect.onsuccess = function (e) {
+                idb = e.target.result;
+                alert("数据库链接成功");
+
+            };
+            dbConnect.onerror = function () {
+                alert("数据库链接失败");
+            }
+        }
+
+        function updataeDatabase() {
+            var dbName = "indexedDBTest1";
+            var dbVersion = 2;
+            var idb;
+            var dbConnect = indexedDB.open(dbName, dbVersion);
+            dbConnect.onsuccess = function (e) {
+                idb = e.target.result;
+                alert("数据库链接成功");
+
+            };
+            dbConnect.onerror = function () {
+                alert("数据库链接失败");
+            }
+            dbConnect.onupgradeneeded = function (e) {
+                idb = e.target.result;
+                var tx = e.target.transcation;
+                var oldversion = e.oldVersion;
+                var newversion = e.newVersion;
+                alert("数据库更新成功" + oldversion + "---->" + newversion);
+            }
+        }
+
+        function createObject() {
+            var dbName = "indexedDBTest1";
+            var dbVersion = 3;
+            var idb;
+            var dbConnect = indexedDB.open(dbName, dbVersion);
+            dbConnect.onsuccess = function (e) {
+                idb = e.target.result;
+                alert("数据库链接成功");
+
+            };
+            dbConnect.onerror = function () {
+                alert("数据库链接失败");
+            }
+            dbConnect.onupgradeneeded = function (e) {//e是当前事件的event，这样可以传递到function里面去，否则function无法获取这个事件
+                idb = e.target.result;
+                var name = "user";
+                var params = {
+                    keyPath: "userId",
+                    autoIncremet: false
+                };
+                var stroe = idb.createObjectStore(name, params);
+                alert("对象仓库创建成功");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="链接数据库" onclick="connectDatabase()">
+<br/><br/><br/>
+<input type="button" value="更新数据库" onclick="updataeDatabase()">
+<br/><br/><br/>
+<input type="button" value="创建对象" onclick="createObject()">
+</body>
+</html>

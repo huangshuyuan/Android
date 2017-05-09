@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+}
+
+#div1 {
+    width: 30%;
+    height: 200px;
+    background-color: #1f36ff;
+    position: absolute; /*右对齐*/
+    right: 0px; /*右对齐*/
+
+}
+
+#div2 {
+    width: 30%;
+    height: 200px;
+    background-color: #ff2e34;
+    position: absolute; /*左对齐*/
+    left: 0px; /*左对齐*/
+}
+
+#div3 {
+    width: 30%;
+    height: 200px;
+    background-color: #ffd227;
+    margin: 0px auto; /*居中*/
+}
+
+#div4 {
+    width: 20%;
+    height: 100px;
+    background-color: #ff57e5;
+    float: left; /*居左*/
+}
+
+#div5 {
+    width: 20%;
+    height: 100px;
+    background-color: #57ff3d;
+    float: right; /*居右*/
+}
+
+.p1 {
+    line-height: normal;
+}
+
+.p2 {
+    line-height: 200%;
+}
+
+.p3 {
+    line-height: 50%;
+}
+
+li{
+    display: inline;
+}

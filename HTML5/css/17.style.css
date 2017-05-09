@@ -1,0 +1,36 @@
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #ff57e5;
+}
+
+.div2 {
+    transform: translate(100px, 100px); /*坐标移动*/
+    /*兼容性*/
+    -webkit-transform: translate(100px, 100px); /*chrome*/
+    -ms-transform: translate(100px, 100px); /*IE*/
+    -o-transform: translate(100px, 100px); /*opera*/
+    -moz-transform: translate(100px, 100px); /*Firefox*/
+
+}
+
+.div3 {
+    margin-top: 200px;
+    transform: rotate(200deg); /*旋转*/
+}
+
+.div4 { /*缩放*/
+    margin-top: 400px;
+    transform: scale(1, 2);
+}
+
+.div5 { /*倾斜*/
+    margin-top: 600px;
+    transform: skew(50deg, 50deg);
+}
+
+.div6 {
+    background-color: #0b6417;
+    transform: rotateX(150deg);
+
+}

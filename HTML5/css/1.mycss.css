@@ -1,0 +1,46 @@
+h1 { /*单个样式*/
+    color: #ff4f6a;
+    font-size: 50px;
+}
+
+h2, a { /*高级样式---选择器分组*/
+    color: #404fff;
+    font-size: 20px;
+}
+
+body { /*当body中没有设置样式，会自动选择body的样式，默认样式*/
+    color: blueviolet;
+}
+
+/*p派生选择器*//*只对给定的改样式*/
+li strong {
+    color: #ffbb37;
+}
+
+/*id 选择器*/
+#p1 {
+    color: #2c3c64;
+}
+
+#div1 {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+}
+
+/*派生和ID*/
+#p1 a {
+    color: #1f36ff;
+}
+
+/*类选择器*/
+.pclass {
+    color: brown;
+}
+
+/*类选择器--派生*/
+.pclass a {
+    color: #ff3c63;
+}
+
+/*CSS基础-属性选择器*/

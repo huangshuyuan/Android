@@ -1,0 +1,65 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #dc3a44;
+    animation: anim 5s infinite alternate;
+    -webkit-animation: anim 5s infinite alternate;
+}
+
+@keyframes anim {
+    0% {
+        background-color: #dc3a44;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    25% {
+        background-color: #0b6417;
+        margin-left: 200px;
+        margin-top: 0px;
+    }
+    50% {
+        background-color: #ffd227;
+        margin-left: 200px;
+        margin-top: 200px;
+    }
+    75% {
+        background-color: #ff57e5;
+        margin-left: 0px;
+        margin-top: 200px;
+    }
+    100% {
+        background-color: #dc3a44;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+}
+
+/*适配*/
+@-webkit-keyframes anim {
+    0% {
+        background-color: #dc3a44;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: #0b6417;
+        right: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: #ffd227;
+        left: 400px;
+        top: 200px;
+    }
+    75% {
+        background-color: #ff57e5;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: #dc3a44;
+        left: 0px;
+        top: 0px;
+    }
+}

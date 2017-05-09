@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript正则表达式</title>
+</head>
+<body>
+<script>
+    var patt1 = new RegExp("hello");
+    var patt2 = /world/;
+    var pat = /my/g;
+    /*/g全局匹配 i 指定大小写忽略*/
+    var sta = "this Ts oy coDe My hello you my 46 657";
+    //    alert(pat.test(sta));//是否存在
+    console.log(pat.test(sta));
+    var ss = /my/i;
+    console.log(sta.search(pat));
+    console.log(sta.match(ss));
+    console.log(sta.replace(pat, "volley"));
+
+    //    console.log(sta);
+    var h = /hello|you/g;
+    console.log(sta.match(pat));
+    console.log(sta.match(h));
+    var h2 = /[a-i]/g;
+    console.log(sta.match(h2));
+    var h3=/\d/g;//查找数字
+    console.log(sta.match(h3));
+</script>
+</body>
+</html>

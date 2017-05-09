@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enabled和disabled</title>
+    <style>
+        input[type="text"]:enabled {
+            /*  可用*/
+            background-color: gold;
+        }
+
+        input[type="text"]:disabled {
+            /* 不可用*/
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    function radio_change() {
+        var radio1 = document.getElementById("radio1");
+        var radio2 = document.getElementById("radio2");
+        var text = document.getElementById("text");
+        if (radio1.checked) {
+            text.disabled = "";
+        } else {
+            text.value = "";
+            text.disabled = "disable";
+        }
+
+    }
+</script>
+<input type="radio" id="radio1" name="radio" onchange="radio_change()">可用
+<input type="radio" id="radio2" name="radio" onchange="radio_change()">不可用
+<input type="text" id="text" disabled>
+</body>
+</html>

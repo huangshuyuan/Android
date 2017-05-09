@@ -1,0 +1,33 @@
+p {
+    font-size: 40px;
+    font-family: 楷体; /*字体*/
+}
+
+/*@font-face {*/
+/*!*引入字体*!*/
+/*font-family: Myfont;!*使用自定义字体*!*/
+/*src: url("");*/
+/*}*/
+
+/*div {*/
+/*font-family: Myfont;*/
+/*}*/
+
+a:link { /*未被点击过*/
+    color: #ff3c63;
+    text-decoration: none; /*去除下划线*/
+    background-color: cadetblue; /*背景颜色*/
+}
+
+a:visited { /*已被点击过*/
+    color: chocolate;
+
+}
+
+a:hover {
+    color: #ecff4f; /*鼠标在上方*/
+}
+
+a:active {
+    color: blueviolet;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript异常处理和事件处理</title>
+</head>
+<style type="text/css">
+    .div {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }</style>
+<body onload="mes()"><!--网页加载事件-->
+<script>
+
+    /*异常*/
+    function demo() {
+        var str = "hello";
+        try {
+            alert(str);
+        } catch (err) {
+            alert(err);
+        }
+    }
+
+    //    demo();
+
+
+    function butt() {
+        try {
+            var c = document.getElementById("tet").value;
+            if (c == "") {
+                throw "请输入内容";
+            }
+        } catch (err) {
+            alert(err)
+        }
+    }
+
+</script>
+
+
+<form>
+    <input id="tet" type="text">
+
+    <input id="btn" type="button" onclick="butt()" value="button">
+</form>
+
+
+<!--事件-->
+
+<button onclick="demo2()">按钮</button>
+<script>
+    function demo2() {
+        alert("hello");
+    }
+
+    function onOver(ooj) {
+        ooj.innerHTML = "hello";
+
+    }
+    function onOut(ooj) {
+        ooj.innerHTML = "World";
+
+    }
+
+    function onChange() {
+        alert("内容改变");
+    }
+
+    function onSelect(bg) {
+
+        bg.style.background="red";
+    }
+    function onSelect2(bg) {
+
+        bg.style.background="blue";
+    }
+
+    function mes() {
+        alert("网页内容加载")
+    }
+</script>
+
+<!--鼠标移入移除-->
+<div class="div" onmouseout="onOut(this)" onmouseover="onOver(this)">
+
+</div>
+
+<form>
+    <input type="text" onchange="onChange()">
+<!--选中内容   获取焦点-->
+    <input type="text" onselect="onSelect(this)" onfocus="onSelect2(this)">
+</form>
+</body>
+</html>

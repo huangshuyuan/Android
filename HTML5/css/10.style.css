@@ -1,0 +1,35 @@
+#position {
+    width: 100px;
+    height: 100px;
+    background-color: #7086ff;
+    position: relative; /*相对布局  position: relative;*/
+    left: 100px; /*对上方的组件向左偏移*/
+    z-index: 2;
+}
+
+#position1 {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4973;
+    position: absolute; /*绝对布局  position: absolute; 相对于组件位置不发生改变*/
+    left: 20px; /*对上方的组件向左偏移*/
+}
+
+#position2 {
+    width: 100px;
+    height: 100px;
+    background-color: #ffea4e;
+    position: fixed; /*固定布局  position: fixed; 相对于窗口 位置不发生改变 一直浮动在窗口*/
+    left: 150px; /*对上方的组件向左偏移*/
+    top: 150px;
+    z-index: 1; /*排放先后，叠加次序*/
+}
+
+#position3 {
+    width: 100px;
+    height: 100px;
+    background-color: #ff14d7;
+    position: static; /*静态口*/
+    left: 150px; /*对上方的组件向左偏移*/
+    top: 150px;
+}

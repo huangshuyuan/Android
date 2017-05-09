@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript面向对象详解 </title>
+</head>
+<body>
+<script>
+    //    var person = {
+    //        name: "hello",
+    //        age: 30,
+    //        eat: function () {
+    //            alert("吃")
+    //        }
+    //    }
+
+    //    alert(person.name);
+    //    person.eat();
+    (function () {
+        function Person(name) {
+            this._name = name;
+        }
+
+//        Person.prototype = {
+//            name: "hhh",
+//            age: 30,
+//            eat: function () {
+//                alert("我在吃")
+//            }
+//        }
+        /*继承*/
+        Person.prototype.say = function () {
+            alert("说话" + this._name)
+        }
+        window.Person = Person;
+    }())
+
+
+    //    var p = new Person();
+    //    p.eat();
+    //    alert(p.name);
+
+    /**/
+    function Student(name) {
+        this._name = name;
+    }
+    (function () {
+        Student.prototype = new Person();
+        var supersay = Student.prototype.say;
+        Student.prototype.say = function () {
+            supersay.call(this);
+            alert("学生说话" + this._name)
+        }
+        window.Student = Student;//对外公开
+    }());
+
+
+    /*封装--私有化*/
+    (function () {
+        var n = "hhh"
+//window.
+    }());
+    //    alert(n);
+
+
+    var s = new Student("ooooo");
+    //    s.say();
+
+</script>
+
+<script>
+
+    function Person(name) {
+        var _this = {}
+        _this._name = name;
+        _this.sayHello = function () {
+            alert("hello3" + this._name);
+        }
+        return _this;
+    }
+
+    function Teacher(name) {
+        var _this = Person(name);//继承
+        var superSay = _this.sayHello;//父类调用
+        _this.sayHello = function () {
+            superSay.call(_this);//父类调用
+            alert("thello"+_this._name);
+        }
+        return _this;
+    }
+
+    var t = Teacher("美国男子");
+    t.sayHello();
+
+</script>
+
+
+</body>
+</html>

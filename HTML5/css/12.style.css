@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+#div1 {
+    width: 950px;
+    height: auto; /*自适应*/
+    margin: 20px auto; /*上下 左右*/
+}
+
+ul {
+    width: 250px;
+    float: left;
+    margin: auto 5px;
+}
+
+/*#ul1 {*/
+/*clear: left;*/
+/*}*/
+
+img {
+    width: 250px;
+    height: auto;
+
+}

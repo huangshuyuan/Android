@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器：first-child、last-child、nth-child 和 nth-last-child</title>
+    <style>
+        /*第一个元素*/
+        li:first-child {
+            background-color: #a2f6ff;
+        }
+
+        /*最后一个元素*/
+        li:last-child {
+            background-color: pink;
+        }
+
+        /*第几个元素*/
+        li:nth-child(4) {
+            background-color: lavender;
+        }
+
+        /*倒数第几个*/
+        li:nth-last-child(2) {
+            background-color: #5fa6ff;
+        }
+
+        /*奇数改变*/
+        li:nth-child(odd){
+            font-size: 20px;
+        }
+       /* !*偶数改变*!
+        li:nth-child(even){
+            font-size: 10px;
+            background-color: lawngreen;
+        }*/
+    </style>
+</head>
+<body>
+<h2>列表</h2>
+
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表5</li>
+    <li>列表6</li>
+    <li>列表7</li>
+    <li>列表8</li>
+</ul>
+
+</body>
+</html>

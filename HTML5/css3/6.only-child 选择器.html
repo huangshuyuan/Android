@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>only-child 选择器</title>
+    <style>
+        li:nth-child(4n+1) {
+            background-color: #cccccc;
+        }
+
+        li:nth-child(4n+2) {
+            background-color: #a579ff;
+        }
+
+        li:nth-child(4n+3) {
+            background-color: #a2f6ff;
+        }
+
+        li:nth-child(4n+4) {
+            background-color: #ffa88f;
+        }
+
+        /*只有一个子元素的时候可以使用*/
+        li:only-child {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<h2>列表</h2>
+<ul>
+    <li>hello</li>
+</ul>
+<ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+    <li>列表4</li>
+</ul>
+<ul>
+    <li>hello</li>
+</ul>
+<ul>
+    <li>hello</li>
+    <li>hello</li>
+</ul>
+<ul>
+    <li>hello</li>
+    <li>hello</li>
+</ul>
+<ul>
+    <li>hello</li>
+</ul>
+</body>
+</html>

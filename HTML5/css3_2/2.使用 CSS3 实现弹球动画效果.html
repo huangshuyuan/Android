@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用 CSS3 实现弹球动画效果</title>
+    <style type="text/css">
+
+        .box {
+            margin: 0 auto;
+            width: 400px;
+            height: 300px;
+            border: 1px black solid;
+            position: relative;
+        }
+
+        .ball {
+            left: 50%;
+            top: 0;
+            background: -webkit-linear-gradient(top, #fff, #999);
+            box-shadow: inset 0 0 30px #999, inset 0 -15px 70px #999;
+            margin-left: -70px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            position: absolute;
+            animation: jump 2s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .ball:after {
+            border-radius: 50%;
+            content: "";
+            display: block;
+            width: 70px;
+            height: 30px;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            margin-left: -35px;
+            background: -webkit-linear-gradient(#fff, #ccc);
+        }
+
+        .shadow {
+            border-radius: 50%;
+            width: 60px;
+            height: 30px;
+            bottom: 0;
+            position: absolute;
+            left: 50%;
+            margin-left: -30px;
+            background: rgba(20, 20, 20, 0.1);
+            box-shadow: 0 0 25px 20px rgba(20, 20, 20, 0.1);
+            transform: scaleY(0.5);
+            animation: shadowanim 2s ease-in-out infinite;
+        }
+
+        @keyframes jump {
+            0% {
+                top: 0;
+                -webkit-animation-timing-function: ease-in;
+            }
+            65% {
+                top: 160px;
+                height: 140px;
+            }
+            75% {
+                height: 120px;
+            }
+            100% {
+                top: 0px;
+                height: 140px;
+            }
+
+        }
+
+        @keyframes shadowanim {
+            0% {
+                width: 90px;
+                height: 60px;
+                margin-left: -45px;
+                -webkit-animation-timing-function: ease-in;
+            }
+            65% {
+                width: 10px;
+                height: 5px;
+                margin-left: -5px;
+                background: rgba(20, 20, 20, 0.3);
+                box-shadow: 0 0 25px 20px rgba(20, 20, 20, 0.3);
+            }
+            75% {
+
+            }
+            100% {
+                width: 90px;
+                height: 60px;
+                margin-left: -45px;
+                background: rgba(20, 20, 20, 0.1);
+                box-shadow: 0 0 25px 20px rgba(20, 20, 20, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="ball"></div>
+    <div class="shadow"></div>
+
+</div>
+
+</body>
+</html>

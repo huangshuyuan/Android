@@ -1,0 +1,52 @@
+$fontStack: Helvetica, sans-serif;
+$color: #ffebeb;
+
+body {
+  margin: 0px;
+  font-family: $fontStack;
+  color: $color;
+  font-size: 20px;
+}
+
+$width:900px;
+$color2: #af9eff;
+div {
+  width: auto;
+  height:$width;
+  background: $color2;
+  color: white;
+}
+
+//sass style
+//-----------------------------------
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+
+//sass style
+//-----------------------------------
+$linkColor: #08c;
+a {
+  text-decoration:none;
+  color:$linkColor;
+  &:hover{
+    color:darken($linkColor,10%);
+  }
+}

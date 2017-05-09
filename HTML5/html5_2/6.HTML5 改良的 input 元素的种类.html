@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 改良的 input 元素的种类</title>
+</head>
+<body>
+<!--url-->
+<form>
+    <input name="url" type="url" value="http://www.baidu.com">
+    <input type="submit">
+</form>
+<!--email：专门输入邮箱-->
+<form>
+    <input type="email" value="">
+    <input type="submit">
+</form>
+<!--date类型-->
+<form>
+    <input type="date">
+    <input type="submit">
+</form>
+<!--time-->
+<form>
+    <input type="time" value="10:00">
+    <input type="datetime" value="">
+    <input type="datetime-local">
+    <input type="submit">
+</form>
+<!--month-->
+<form>
+    <input type="month" value="2017.2.3">
+    <input type="week">
+    <input type="number" value="15" min="10" max="20" step="2">
+</form>
+<script>
+    function addd() {
+        var n1 = document.getElementById("num1").valueAsNumber;
+        var n2 = document.getElementById("num2").valueAsNumber;
+        var re = document.getElementById("result").valueAsNumber = n1 + n2;
+    }
+
+</script>
+<form>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <input type="number" id="result" readonly>
+    <input type="button" value="计算" onclick="addd()">
+</form>
+
+<!--range-->
+<form>
+    <input type="range" value="25" min="0" max="100" step="5">
+    <input type="search">
+    <input type="tel">
+
+</form>
+<!--颜色选取器-->
+<input type="color"
+       onchange="document.body.style.backgroundColor=document.getElementById('current').textContent=this.value">
+<span id="current"></span>
+
+<script>
+    function changere() {
+        var nu = document.getElementById("range").value;
+        document.getElementById("out").value = nu;
+    }
+</script>
+<!--时刻获取数值-->
+<form>
+    <input id="range" type="range" value="25" min="0" max="100" step="5" onchange="changere()">
+    <output id="out">10</output>
+</form>
+
+<!--表单验证-->
+<script>
+    function check() {
+        var email=document.getElementById("email");
+        if(email.value==""){
+            alert("不为空");
+        }else if(!email.checkValidity()){
+            alert("请输入正确的email");
+        }
+    }
+</script>
+<form onsubmit="check()" novalidate="true">
+    <label for="email">Email</label>
+    <input type="email" id="email"><br>
+    <input type="submit">
+</form>
+</body>
+</html>

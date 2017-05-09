@@ -1,0 +1,63 @@
+.tr1 {
+    padding: 20px;
+}
+
+#p1 {
+    border-style: double; /*边框*/
+    border-top-style: groove;
+    border-top-width: 10px;
+}
+
+#button1 {
+    border-style: groove;
+    border-width: 1px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: black;
+    text-align: center;
+}
+
+.div1 {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #FF5C40;
+    text-align: center;
+    background-color: #ffb4ec;
+    color: #ff3c63;
+}
+
+.div2 {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: #ffb4ec;
+    margin: 100px;
+}
+
+.container{
+    margin: 100px;
+}
+.bd{
+    border-style: dashed;
+}
+.pd{
+    padding: 10px;
+}
+.content{
+    background-color: #5fa6ff;
+}
+
+.container1{
+    margin: 50px;
+}
+.bd1{
+    border-style: dashed;
+}
+.pd1{
+    padding: 10px;
+}
+.content1{
+    background-color: #5fa6ff;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对一个元素使用多种变形的方法</title>
+    <style>
+        . div1 {
+            width: 300px;
+            background-color: rebeccapurple;
+            text-align: center;
+            /*transform: translate(200px, 200px) rotate(45deg) scale(2.5);!**!*/
+            transform: rotate(45deg) translate(200px, 200px) scale(2.5);
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .div2{
+            transform: rotate(45deg);
+        }
+        .div3{
+            transform-origin: bottom right;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    hello
+</div>
+<br/><br/><br/>
+指定变形的基准点
+<br/>
+<div class="div2">
+    hello2
+</div>
+<div class="div3">
+    hello2
+</div>
+</body>
+</html>

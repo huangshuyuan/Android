@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 新增的主体结构元素</title>
+</head>
+<body>
+<h1>article</h1>
+<article>
+    <!--文章-->
+
+    <header>
+        <h1>hello</h1>
+        <p>hello,kkkkk， hello，你好呀</p>
+    </header>
+    <article>
+        <header>作者</header>
+        <p>评论</p>
+        <footer>
+            时间
+        </footer>
+    </article>
+    <article>
+        <h1>这是一个内嵌页面</h1>
+        <object>
+            <!--加入一个自己的页面-->
+            <embed src="http://localhost:63342/HTML5Demo/JavaScript/13.Javascript%E7%80%91%E5%B8%83%E6%B5%81.html?_ijt=53d5agb316reikk2gp69r8ombf"
+                   width="600px" height="400"></embed>
+        </object>
+    </article>
+    <p>中部</p>
+    <footer>
+        底部
+    </footer>
+</article>
+
+<h1>Section元素</h1>
+<section>
+    <h1>苹果</h1>
+    <p>好吃</p>
+</section>
+<article>
+    <h1>苹果</h1>
+    <p>好吃</p>
+    <section>
+        <h2>红富士</h2>
+        <p>红</p>
+    </section>
+    <section>
+        <h2>红富士</h2>
+        <p>红</p>
+    </section>
+</article>
+
+<section>
+    <h1>水果</h1>
+    <article><!--独立-->
+        <h2>苹果</h2>
+        <p>内容</p>
+
+    </article>
+    <article><!--独立-->
+        <h2>苹果</h2>
+        <p>内容</p>
+
+    </article>
+</section><!--分段，有标题-->
+<h1>nav元素：导航</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="#">主页</a>
+        </li>
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li>
+            <a href="#">主页</a>
+        </li>
+        <li>
+            <a href="#">主页</a>
+        </li>
+    </ul>
+</nav>
+<article>
+    <header>
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">HTML</a>
+                </li>
+                <li>
+                    <a href="#">JAVA</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>HTML历史</h1>
+        <p>helo</p>
+    </section>
+    <section>
+        <h1>JAVA历史</h1>
+        <p>helo</p>
+    </section>
+    <footer>
+        <a href="#"> 删除</a>
+    </footer>
+</article>
+<footer>
+    <p><small>版权声明：</small></p>
+</footer>
+
+<h1>aside元素</h1>
+<header>
+    <h1>js入门</h1>
+</header>
+<article>
+    <h1>语法</h1>
+    <p>文章</p>
+    <aside>
+        <h1>名词解释</h1>
+        <p>语法：。。。。。</p>
+    </aside>
+</article>
+<aside><!--附属信息-->
+    <nav>
+        <h2>评论</h2>
+        <ul>
+            <li><a href="#">2015-3-30</a></li>
+            <li><a href="#">哈哈哈</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<h1>time 元素和 pubdate 属性</h1>
+    <time datetime="2015-10-2">2015-10-2</time>
+    <time datetime="2015-10-2T20:00">2015-10-2</time>
+    <time datetime="2015-10-2T20:00Z">2015-10-2</time>
+    <time datetime="2015-10-2T20:00+09:00">2015-10-2</time><!--时差-->
+
+<h2>p</h2>
+<article>
+    <header>
+        <h1>pp</h1>
+        <p>发布时间：<time datetime="2017-10-9" pubdate>2017-2-2</time></p>
+        <p>发布时间：<time datetime="2017-10-9" >2017-2-2</time></p>
+
+    </header>
+</article>
+
+</body>
+</html>

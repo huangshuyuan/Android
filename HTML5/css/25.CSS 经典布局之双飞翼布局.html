@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 经典布局之双飞翼布局 </title>
+    <style rel="stylesheet">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .head {
+            background-color: #0b6417;
+            width: 100%;
+            height: 200px;
+        }
+
+        .container {
+            background-color: #6db6ff;
+            width: 100%;
+            height: 900px;
+            overflow: hidden;
+
+        }
+
+        .left {
+            width: 150px;
+            float: left;
+            background-color: #af9eff;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+            margin-left: -100%;
+        }
+
+        .inner {
+            margin-left: 155px;
+            margin-right: 155px;
+            background-color: rebeccapurple;
+            height: 100%;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+
+        }
+
+        .right {
+            width: 150px;
+            background-color: #1aff11;
+            float: left;
+            margin-left: -150px;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+
+        }
+
+        .middle {
+            background-color: #ecff4f;
+            margin-bottom: -9999px;
+            padding-bottom: 9999px;
+            float: left;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #4c2dff;
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="head">
+    header
+</div>
+<div class="container">
+    <div class="middle">
+        <div class="inner">中间</div>
+    </div>
+    <div class="left">
+        left
+    </div>
+    <div class="right">
+        right
+    </div>
+
+</div>
+<div class="footer">
+    底部
+</div>
+
+</body>
+</html>

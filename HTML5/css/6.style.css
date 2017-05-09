@@ -1,0 +1,30 @@
+#tb {
+    border: 1px solid #2c3c64; /*外边框颜色*/
+    border-color: #1f36ff; /*填充色*/
+}
+
+#tb th {
+    /*外边框颜色 头部*/
+    background-color: #404fff;
+    color: white;
+}
+
+#tb tr td {
+    border: 1px solid #292f4a; /*外边框颜色*/
+    padding: 5px;
+
+}
+
+#tb {
+    width: 400px; /*表格大小*/
+    height: 400px;
+    text-align: center; /*内容居中*/
+    border-collapse: collapse; /*折叠边框---单边*/
+}
+
+.tr1 {
+    color: cornsilk;
+    background-color: #7086ff;
+}
+
+
